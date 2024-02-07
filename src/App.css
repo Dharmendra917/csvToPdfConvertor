@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+  background: whitesmoke;
+  font-family: "gilroy";
+  padding-bottom: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ---- nav */
+.nav {
+  background: linear-gradient(to left, #6da5c0, #7bb9d8);
+  padding: 6px 75px 6px 15px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  z-index: 999;
+}
+.nav h2 {
+  font-size: 30px;
+  font-family: "voyage";
+  color: #e7ecee;
+}
+.nav i {
+  font-size: 25px;
+}
+.imgDiv {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 4%;
+  top: 115%;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.568);
+}
+.hint {
+  position: absolute;
+  background-color: rgba(6, 6, 6, 0.596);
+  width: 400px;
+  height: 500px;
+
+  right: 10%;
+  top: 110%;
+  padding: 10px;
+  color: rgb(249, 247, 247);
+}
+.hint .innerHint {
+  border: 1px solid #6da5c0;
+  padding: 1px;
+  width: 100%;
+  height: 100%;
+  color: rgb(186, 37, 37);
+}
+.hint ul {
+  margin: 20px 1px 2px 22px;
+  font-size: 20px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.hint ul li {
+  margin: 15px 1px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.409);
+}
+.img {
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Dropzone */
+.dropzone {
+  display: grid;
+  place-items: center;
+  margin: 75px 6px;
+  border-bottom: 1px solid #6da5c0;
+}
+.dropzone .inner {
+  width: 25%;
+  color: green;
+}
+button {
+  font-family: gilroy;
+  background-color: #6da5c0;
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 8px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dropzone button:hover {
+  background-color: #60a3c5;
+}
+
+/* PDFViewer.-- */
+.outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.PDFViewer {
+  background-color: #404040;
+  min-width: 60%;
+  width: auto;
+  height: 90vh;
+  max-height: auto;
+  padding: 8px 4px;
+  display: grid;
+  place-items: center;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* .PDFViewer::-webkit-scrollbar {
+   display: none; 
+} */
+.PDFFile {
+  text-align: center;
+  padding: 4px 0px;
+  background-color: white;
+  min-width: 21.59cm;
+  width: auto;
+  /* min-height: 27.91cm; */
+  height: auto;
+}
+.PDFFile h1 {
+  margin: 4% 0px 2% 0px;
+  font-weight: 300;
+}
+.PDFFile table {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  border-collapse: collapse;
+  margin: 20px 5px 0px 5px;
+  padding-bottom: 25px;
+}
+.PDFFile th,
+td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+.PDFFile td {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+/* Footer.. */
+.Footer {
+  background-color: #404040;
+  align-items: center;
+  color: white;
+  width: 100%;
+  margin-top: 4%;
+}
+.topFooter {
+  padding: 4px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+.topFooter .About,
+.Social,
+.Contact {
+  background-color: rgba(255, 255, 255, 0.021);
+  border-radius: 2px;
+  padding: 2px 12px;
+  width: 340px;
+  height: auto;
+  margin: 5px 2px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.topFooter h1 {
+  font-family: "voyage";
+}
+.topFooter h3 {
+  font-size: 23px;
+  width: 100px;
+
+  font-weight: 500;
+  margin: 2px 2px;
+  padding: 2px 5px;
+  color: white;
+}
+.topFooter .link {
+  text-align: start;
+  width: 100px;
+}
+.link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.667);
+}
+.link:hover {
+  color: white;
+}
+.topFooter p {
+  margin: 2px 2px;
+  padding: 2px 5px;
+}
+.bottomFooter {
+  background-color: #212121;
+  padding: 8px 6px;
+  display: grid;
+  place-items: center;
+}
+.bottomFooter h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+.bottomFooter h2 span:nth-child(1) {
+  font-family: "voyage";
+  font-weight: 700;
+  opacity: 1;
+}
+.bottomFooter h2 span:nth-child(2) {
+  font-family: "voyage";
+  opacity: 0.5;
+  font-weight: 500;
 }

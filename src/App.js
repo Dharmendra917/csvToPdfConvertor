@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Show from "./components/Show.jsx";
+import Nav from "./components/Nav.jsx";
+import Dropzone from "./components/Dropzone.jsx";
+import PDFGenerator from "./components/PDFGenerator.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
+  const [studentInformation, setstudentInformation] = useState([]);
+  const [counter, setcounter] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav />
+      <Dropzone setcounter={setcounter} counter={counter} />
+      <PDFGenerator studentInformation={studentInformation} />
+      <Show
+        setstudentInformation={setstudentInformation}
+        counter={counter}
+      />{" "}
+      {/*read data */}
+      <Footer />
     </div>
   );
 }
