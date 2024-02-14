@@ -127,7 +127,7 @@ button {
   background-color: white;
   min-width: 21.59cm;
   width: auto;
-  /* min-height: 27.91cm; */
+  min-height: 27.91cm;
   height: auto;
 }
 .PDFFile h1 {
