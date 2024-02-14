@@ -22,13 +22,16 @@ const PDFGenerator = ({ studentInformation }) => {
       >
         <ReactToPrint
           trigger={() => (
-            <button className="button">
+            <button
+              style={{ minWidth: "150px", backgroundColor: "#42a2d2" }}
+              className="button"
+            >
               {" "}
               {studentInformation.length >= 1 ? (
                 "Download PDF"
               ) : (
                 <img
-                  style={{ width: "60px", height: "50px", objectFit: "cover" }}
+                  style={{ width: "30px", height: "35px", objectFit: "cover" }}
                   src="https://i.gifer.com/XOsX.gif"
                   alt="nothing"
                 ></img>

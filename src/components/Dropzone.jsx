@@ -38,11 +38,9 @@ const Dropzonee = (props) => {
     try {
       e.preventDefault();
       const file = files[0].file;
-
       const formdata = new FormData();
       formdata.append("csvFile", file);
-      const res = await axios.post("/create", formdata);
-      console.log(res);
+      await axios.post("/create", formdata);
       setFiles([]);
       setcounter(counter + 1);
     } catch (error) {
